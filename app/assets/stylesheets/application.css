@@ -1,15 +1,117 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+
+:root {
+  --tart-orange: #fe4a49ff;
+  --orange-yellow-crayola: #fed766ff;
+  --pacific-blue: #009fb7ff;
+  --gainsboro: #e6e6eaff;
+  --ghost-white: #f4f4f8ff;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+nav {
+  background-color: var(--pacific-blue);
+  color: white;
+}
+
+nav a {
+  color: white !important;
+}
+
+body {
+  background-color: var(--ghost-white) !important;
+}
+
+.page-heading {
+  font-weight: 600;
+  color: var(--pacific-blue);
+}
+
+.page-heading a {
+  font-size: 1.4rem;
+  color: var(--pacific-blue);
+}
+
+.article-list-item {
+  padding: 1.4rem 20px 1.4rem 20px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  margin-top: 0.8rem;
+  transition: all 0.2s ease-out;
+  border-left: 4px solid var(--maya-blue);
+  background-color: var(--ghost-white);
+  border-radius: 8px;
+}
+
+.article-list-item:hover {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.article-list-item a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.4rem;
+}
+
+.article-field {
+  border: none;
+  background-color: white;
+  border-bottom: 2px solid var(--gainsboro);
+  font-size: 2rem;
+  font-weight: 300;
+  height: 4rem;
+  width: 460px;
+  padding-left: 20px;
+  background-color: var(--gainsboro);
+}
+
+.article-field:focus {
+  /* border: none; */
+  outline: none;
+  border-bottom: 2px solid var(--pacific-blue);
+}
+
+textarea {
+  background-color: var(--gainsboro);
+  border-bottom: 2px solid var(--gainsboro);
+  border: none;
+  width: 460px;
+  height: 200px;
+  padding-left: 20px;
+  padding-top: 10px;
+  margin-bottom: 6px !important;
+}
+textarea:focus {
+  border: none;
+  outline: none;
+  border-bottom: 2px solid var(--pacific-blue);
+}
+
+.btn-accent {
+  background-color: var(--pacific-blue) !important;
+  color: white !important;
+  padding: 0.8rem !important;
+}
+.btn-accent:hover {
+  background-color: var(--pacific-blue) !important;
+  opacity: 0.9;
+  color: white !important;
+}
+
+.add-btn {
+  height: 60px !important;
+  width: 60px !important;
+  border-radius: 100%;
+  color: white !important;
+  position: absolute;
+  bottom: 4rem;
+  right: 4rem;
+  border: none;
+  background-color: var(--pacific-blue);
+  transition: all 0.2s ease-in;
+}
+
+.add-btn:hover {
+  transform: scale(105%);
+}

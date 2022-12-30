@@ -1,2 +1,7 @@
-<h1><%= @article.title %></h1>
+<h1 class="page-heading">
+<%= @article.title %>
+ <%= link_to "", edit_article_path(@article), class:'bi bi-pencil' %></i> <%= link_to "", article_path(@article), class: "bi bi-trash" , data: {      turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></h1>
 <p><%= @article.body %></p>
+  
