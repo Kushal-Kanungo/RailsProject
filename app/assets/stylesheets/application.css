@@ -129,6 +129,9 @@ textarea:focus {
     border: none;
     background-color: var(--pacific-blue);
     transition: all 0.2s ease-in;
+    text-decoration: none;
+    font-size: 4rem;
+    font-weight: 200;
 }
 
 .add-btn:hover {

@@ -1,6 +1,4 @@
 class ArticlesController < ApplicationController
-  
-  # 
   def index
     @articles = Article.all
   end
@@ -15,7 +13,6 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
-
     if @article.save
       redirect_to @article
     else
@@ -29,7 +26,6 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.find(params[:id])
-
     if @article.update(article_params)
       redirect_to @article
     else
@@ -46,8 +42,8 @@ class ArticlesController < ApplicationController
 
   private
 
-    def article_params
-      params.require(:article).permit(:title, :body)
-    end 
-
+  # This is called as strong parameters we allow only parameneters that are required
+  def article_params
+    params.require(:article).permit(:title, :body)
+  end
 end

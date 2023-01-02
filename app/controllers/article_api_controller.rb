@@ -9,7 +9,7 @@ class ArticleApiController < ApplicationController
 
   def article_by_id
     @article = Article.find(params[:id])
-    render json: @article.to_json
+    render json: @article
   end
 
   private
