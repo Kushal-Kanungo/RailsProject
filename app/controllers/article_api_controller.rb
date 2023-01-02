@@ -12,6 +12,13 @@ class ArticleApiController < ApplicationController
     render json: @article.to_json
   end
 
+  def test_route
+    param_data = params
+    permitted_data = params.permit(:a)
+    only_array = params.permit(b: [])
+    render json: only_array
+  end
+
   private
 
   def render_not_found_response

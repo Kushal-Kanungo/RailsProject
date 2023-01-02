@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   # get '/articles', to: 'articles#index'
   # get "/articles/:id", to: 'articles#show'
 
+  get 'api/articles/test', to: 'article_api#test_route', as: 'test_route'
+
   # ? It makes all convenstional routes for us like create, read, update, delete
   resources :articles
 
