@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'task/index'
   get 'home/index'
   root 'articles#index'
   get 'home/about'
@@ -15,6 +16,9 @@ Rails.application.routes.draw do
   # ? It makes all convenstional routes for us like create, read, update, delete
   resources :articles
 
+  get 'tasks', to: 'task#index'
+  post 'tasks', to: 'task#create'
+  get 'tasks/:id', to: 'task#show'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
