@@ -4,4 +4,5 @@
 - has_many
 - helpers
 - active_storage
+- jbuilder
 - main
