@@ -63,5 +63,5 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
 
   #?  Added so that we can directly call create() method
-   config.include FactoryBot::Sytax::Methods
+   config.include FactoryBot::Syntax::Methods
 end
