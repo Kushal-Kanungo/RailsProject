@@ -16,12 +16,13 @@ RSpec.describe Article, type: :model do
     it 'should not be valid for evil article' do
       expect(article2.valid?).to eq(false)
     end
+    # <====================== To check custom validations  ======================>
     it 'should give error for duplication' do
       article.save
       expect(article3.save).to eq(false)
       expect { article3.save! }.to raise_error(ActiveRecord::RecordInvalid)
     end
-
+    # <===================== Alternate method to create a dummy project =======================>
     it 'should create an article' do
       dummy = create(:article)
       expect(dummy.valid?).to eq(true)
@@ -36,13 +37,14 @@ RSpec.describe Article, type: :model do
       end
     end
 
-    # <====== To test custom methods  =======>
+    # <====== To test custom methods of models  =======>
 
     it 'should identify god' do
       dummy = build(:article, title: 'God')
       expect(dummy).to be_god
     end
 
+    # <====== To test custom methods of models for false  =======>
     it 'should not be god' do
       dummy = build(:article, title: 'Satan')
       expect(dummy).not_to be_god
