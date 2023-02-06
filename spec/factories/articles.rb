@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :article do
     title { Faker::Book.title }
-    body { Faker::Book.genre[10..20] }
+    body { Faker::Alphanumeric.alpha(number: 11) }
   end
 end
