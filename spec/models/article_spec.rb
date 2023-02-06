@@ -27,13 +27,25 @@ RSpec.describe Article, type: :model do
       expect(dummy.valid?).to eq(true)
     end
 
-    # ? To run a loop in it block
+    # <========== To run a loop in it block =============>
     it 'should run a loop' do
       titles = ['Harry potter', 'One Punch man']
       titles.each do |title_name|
         dummy = build(:article, body: title_name)
         expect(dummy.valid?).to eq(true)
       end
+    end
+
+    # <====== To test custom methods  =======>
+
+    it 'should identify god' do
+      dummy = build(:article, title: 'God')
+      expect(dummy).to be_god
+    end
+
+    it 'should not be god' do
+      dummy = build(:article, title: 'Satan')
+      expect(dummy).not_to be_god
     end
   end
 end

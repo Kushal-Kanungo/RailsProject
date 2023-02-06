@@ -8,4 +8,8 @@ class Article < ApplicationRecord
 
     errors.add(:title, 'is evil')
   end
+
+  def god?
+    title == 'God'
+  end
 end
