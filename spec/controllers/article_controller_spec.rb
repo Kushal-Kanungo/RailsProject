@@ -62,6 +62,22 @@ RSpec.describe ArticlesController, type: :controller do
     end
   end
 
+  describe 'Delete destroy' do
+    # let(:article1) { create :article }
+    # let(:article2) { create :article }
+    # let(:article3) { create :article }
+
+    it 'should reduce the article count by 1' do
+      article1 = create :article
+      article2 = create :article
+      article3 = create :article
+      delete :destroy, params: {
+        id: article1.id
+      }
+      expect(Article.count).to eq(2)
+    end
+  end
+
   def article_params
     {
       title: Faker::Book.title,
