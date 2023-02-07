@@ -37,17 +37,19 @@ RSpec.describe Article, type: :model do
       end
     end
 
-    # <====== To test custom methods of models  =======>
+    describe '#god?' do
+      # <====== To test custom methods of models  =======>
 
-    it 'should identify god' do
-      dummy = build(:article, title: 'God')
-      expect(dummy).to be_god
-    end
+      it 'should identify god' do
+        dummy = build(:article, title: 'God')
+        expect(dummy).to be_god
+      end
 
-    # <====== To test custom methods of models for false  =======>
-    it 'should not be god' do
-      dummy = build(:article, title: 'Satan')
-      expect(dummy).not_to be_god
+      # <====== To test custom methods of models for false  =======>
+      it 'should not be god' do
+        dummy = build(:article, title: 'Satan')
+        expect(dummy).not_to be_god
+      end
     end
   end
 end
