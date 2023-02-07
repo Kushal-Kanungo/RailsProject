@@ -76,6 +76,18 @@ RSpec.describe ArticlesController, type: :controller do
       }
       expect(Article.count).to eq(2)
     end
+
+    it 'should reduce the article count by 1' do
+      article1 = create :article
+      article2 = create :article
+      article3 = create :article
+      delete :destroy, params: {
+        id: article1.id
+      }
+      expect(Article.count).to eq(2)
+    end
+
+
   end
 
   def article_params
