@@ -1,3 +1,4 @@
+# Request spec testing is better than controller testing because it can also test route
 require 'rails_helper'
 
 RSpec.describe 'Articles', type: :request do
@@ -18,6 +19,7 @@ RSpec.describe 'Articles', type: :request do
   end
 
   describe 'Put /article/id' do
+    # ? To pass id in member routes
     it 'it should edit an article' do
       article = Article.create(title: 'It is a neame', body: 'It is a body')
       patch article_path(id: article.id), params: {
