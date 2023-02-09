@@ -18,9 +18,13 @@ RSpec.describe ArticlesController, type: :controller do
       expect(response).to have_http_status(:ok)
     end
 
+    # <=================== Template is rendering   ====================>
+
     it 'should render the index template' do
       expect(response).to render_template('index')
     end
+
+    # <=================== Server responded with correct response  =====================>
 
     it 'should give status code 200' do
       expect(response).to have_http_status(:ok)
@@ -28,6 +32,8 @@ RSpec.describe ArticlesController, type: :controller do
   end
 
   describe 'POST create' do
+    # <============= Testing we are redirected to correct route ===================>
+
     it 'should accepts the params of article create a new article and redirect to show page' do
       post :create, params: {
         article: article_params
@@ -39,6 +45,7 @@ RSpec.describe ArticlesController, type: :controller do
       # TODO: expect(response).to render_template('path_to_the_views')
     end
 
+    # <========== To check the validity of an model object  ==========>
     it 'should should give error for invalid article data' do
       post :create, params: {
         article: {
@@ -49,6 +56,8 @@ RSpec.describe ArticlesController, type: :controller do
       expect(assigns(:article).valid?).to_not eq(true)
     end
   end
+
+  # <================ Update request is successfull ==================>
 
   describe 'Patch update' do
     let(:article) { create(:article) }
@@ -67,15 +76,7 @@ RSpec.describe ArticlesController, type: :controller do
     # let(:article2) { create :article }
     # let(:article3) { create :article }
 
-    it 'should reduce the article count by 1' do
-      article1 = create :article
-      article2 = create :article
-      article3 = create :article
-      delete :destroy, params: {
-        id: article1.id
-      }
-      expect(Article.count).to eq(2)
-    end
+    # <============= Delete route is deleting currectly ===============>
 
     it 'should reduce the article count by 1' do
       article1 = create :article
@@ -86,10 +87,9 @@ RSpec.describe ArticlesController, type: :controller do
       }
       expect(Article.count).to eq(2)
     end
-
-
   end
 
+  # * Just Creating JSON BODY
   def article_params
     {
       title: Faker::Book.title,
